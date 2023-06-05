@@ -1,0 +1,12 @@
+{% extends 'base.html' %} 
+{%block body%}
+
+{% for blog in list %}
+
+<br>
+<h1><a href="{%url 'blog' blog.id %}">Blog name:{{blog.title}}</a> </h1>
+<h5>Blog author:{{blog.author}},Blog content:{{blog.content}}</h5>
+<hr>
+<br>
+{%endfor%}
+{%endblock%}
