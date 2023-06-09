@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect,get_object_or_404
 from .models import Blog
-from .forms import BlogForm
+from .forms import BlogForm,ProductForm
 def list(request):
     list=Blog.objects.all()
     context={'list':list}
@@ -20,9 +20,14 @@ def blog_create(request):
             form.save()
             return redirect('list')
 
-
     context={'form':form}
     return render(request,'blog_create.html',context)
 
+def product_create(request):
+    form=ProductForm(request.POST)
+    context={
+        'form':form
+    }
+    return render(request,'imtahanim_var.html ',context)
 
 # Create your views here.

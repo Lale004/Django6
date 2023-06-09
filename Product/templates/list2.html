@@ -1,0 +1,8 @@
+{%extends 'base.html'%} {%block body%} {% for product in products %}
+<div class="product">
+  <h3>{{ product.name|lower|join:"/" }}</h3>
+  <p>Destription: bilmedim</p>
+  <p>Total Price: {{ product.total_price|add:10|floatformat:2 }}</p>
+  <p>Created At: {{ product.created_at|timesince }}</p>
+</div>
+{% endfor %} {%endblock%}

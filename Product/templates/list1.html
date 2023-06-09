@@ -1,0 +1,14 @@
+{%extends 'base.html'%}
+
+{%block body%}
+
+{% for product in products %}
+    <div class="product">
+        <h3>{{ product.name|default:"Product"|lower }}</h3>
+        <p>{{ product.content|truncatechars:50 }}</p>
+        <p>Total Price: bilmedim </p>
+        <p>Created At: {{ product.created_at|date:"d.m.Y" }}</p>
+    </div>
+{% endfor %}
+
+{%endblock%}
